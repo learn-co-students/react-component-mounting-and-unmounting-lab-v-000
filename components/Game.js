@@ -3,18 +3,30 @@ import Pancake from './Pancake';
 
 export default class Game extends React.Component {
 
-  // TODO: create a componentWillMount() which will set the current time
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: undefined,
+      pancakes: [],
+      cooked: 0,
+      burnt: 0,
+      raw: 0,
+    };
+    this.addPancake = this.addPancake.bind(this);
+    this.takeItOff = this.takeItOff.bind(this);
+  }
+
   componentWillMount() {
     this.setCurrentTime();
   }
 
   setCurrentTime() {
-    this.setState({ time: new Date(Date.now())});
+    this.setState({ time: new Date(Date.now()) });
   }
 
   addPancake() {
     this.setState({
-      pancakes: this.state.pancakes.concat(Date.now())
+      pancakes: this.state.pancakes.concat(Date.now()),
     });
   }
 
@@ -24,21 +36,8 @@ export default class Game extends React.Component {
       pancakes: pancakes.filter(pancake => !(pancake === id)),
       cooked: status === 'cooked' ? cooked + 1 : cooked,
       burnt: status === 'burnt' ? burnt + 1 : burnt,
-      raw: status === 'raw' ? raw + 1 : raw
+      raw: status === 'raw' ? raw + 1 : raw,
     });
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: undefined,
-      pancakes: [],
-      cooked: 0,
-      burnt: 0,
-      raw: 0
-    };
-    this.addPancake = this.addPancake.bind(this);
-    this.takeItOff = this.takeItOff.bind(this);
   }
 
   render() {
@@ -55,6 +54,6 @@ export default class Game extends React.Component {
         <button onClick={this.addPancake} className="Game__button">New pancake!</button>
         <div className="Game__pancakes">{pans}</div>
       </div>
-    )
+    );
   }
 }
