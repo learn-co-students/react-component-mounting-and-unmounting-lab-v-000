@@ -3,11 +3,11 @@ import React from 'react';
 export default class Pancake extends React.Component {
 
   componentDidMount(){
-    this.setTimeout(1000)
+    this.startInterval()
   }
 
   componentWillUnmount(){
-
+    this.cleanUpInterval()
   }
 
   // TODO: create a componentDidMount() which will start the interval to count how long the pancake has been cooking
