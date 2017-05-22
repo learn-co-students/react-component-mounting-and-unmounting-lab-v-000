@@ -6,6 +6,13 @@ export default class Pancake extends React.Component {
 
   // TODO: create a componentWillUnmount() which will clear the interval
 
+  componentDidMount() {
+    this.startInterval()
+  }
+  componentWillUnmount() {
+    this.cleanUpInterval()
+  }
+
   updateCounter() {
     this.setState({
       timeCooked: this.state.timeCooked + 1
