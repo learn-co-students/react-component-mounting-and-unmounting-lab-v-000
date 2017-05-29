@@ -5,6 +5,10 @@ export default class Game extends React.Component {
 
   // TODO: create a componentWillMount() which will set the current time
 
+  componentWillMount() {
+   this.setCurrentTime();
+ }
+
   setCurrentTime() {
     this.setState({ time: new Date(Date.now())});
   }
@@ -37,6 +41,10 @@ export default class Game extends React.Component {
     this.addPancake = this.addPancake.bind(this);
     this.takeItOff = this.takeItOff.bind(this);
   }
+
+
+
+
 
   render() {
     const { pancakes, burnt, cooked, raw, time } = this.state;
