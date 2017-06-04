@@ -31,7 +31,8 @@
   },
   "homepage": "https://github.com/learn-co-curriculum/react-component-mounting-and-unmounting#readme",
   "devDependencies": {
-    "babel-core": "^6.11.4",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
@@ -42,7 +43,9 @@
     "mocha": "^3.0.0",
     "mocha-multi": "^0.9.0",
     "node-inspector": "^0.12.8",
-    "react-addons-test-utils": "^15.3.0"
+    "react-addons-test-utils": "^15.3.0",
+    "react-scripts": "^1.0.7",
+    "webpack": "^2.6.1"
   },
   "dependencies": {
     "react": "^15.3.0",
