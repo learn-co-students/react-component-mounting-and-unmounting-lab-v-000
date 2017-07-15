@@ -18,6 +18,10 @@ class Game extends React.Component {
 
   // TODO: create a componentWillMount() which will set the current time
 
+  componentWillMount = () => {
+    this.setCurrentTime()
+  }
+
   setCurrentTime = () => {
     this.setState({ time: new Date(Date.now())});
   }
@@ -41,6 +45,8 @@ class Game extends React.Component {
 
   render() {
     const { pancakes, burnt, cooked, raw, time } = this.state;
+    // I think this line sets all of those constansts equal to their correlating keys 
+    // in state. Which, if that's what's going on, is very cool.
     const pans = pancakes.map((pancake, index) => <Pancake key={index} id={pancake} takeItOff={this.takeItOff} />);
 
     return (
