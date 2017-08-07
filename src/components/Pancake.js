@@ -58,6 +58,14 @@ class Pancake extends React.Component {
     this.props.takeItOff(id, status);
   }
 
+  componentDidMount = () => {
+    this.startInterval();
+  }
+
+  componentWillUnmount = () => {
+    this.cleanUpInterval();
+  }
+
   render() {
     const { timeCooked, flippedAt } = this.state;
     const firstSide = Boolean(this.state.flippedAt === undefined);
@@ -71,9 +79,9 @@ class Pancake extends React.Component {
             Time cooked on {`${firstSide ? 'first' : 'second'}`} side: {`${firstSide ? timeCooked : timeCooked - flippedAt}`}
           </p>
           <div>
-            { firstSide ? 
-              <button onClick={this.flip}>Flip me!</button> 
-              : 
+            { firstSide ?
+              <button onClick={this.flip}>Flip me!</button>
+              :
               <button onClick={this.takeItOff}>Take me off!</button>
             }
           </div>
