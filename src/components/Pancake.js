@@ -11,22 +11,20 @@ class Pancake extends React.Component {
     };
   }
 
-  // TODO: create a componentDidMount() which will start the interval to count how long the pancake has been cooking
+  // DONE: create a componentDidMount() which will start the interval to count how long the pancake has been cooking
+  componentDidMount() {
+    this.interval = setInterval(this.updateCounter, 1000);
+  }
 
-  // TODO: create a componentWillUnmount() which will clear the interval
+  // DONE: create a componentWillUnmount() which will clear the interval
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   updateCounter = () => {
     this.setState({
       timeCooked: this.state.timeCooked + 1
     })
-  }
-
-  startInterval = () => {
-    this.interval = setInterval(this.updateCounter, 1000);
-  }
-
-  cleanUpInterval = () => {
-    clearInterval(this.interval);
   }
 
   flip = () => {
@@ -71,9 +69,9 @@ class Pancake extends React.Component {
             Time cooked on {`${firstSide ? 'first' : 'second'}`} side: {`${firstSide ? timeCooked : timeCooked - flippedAt}`}
           </p>
           <div>
-            { firstSide ? 
-              <button onClick={this.flip}>Flip me!</button> 
-              : 
+            { firstSide ?
+              <button onClick={this.flip}>Flip me!</button>
+              :
               <button onClick={this.takeItOff}>Take me off!</button>
             }
           </div>
