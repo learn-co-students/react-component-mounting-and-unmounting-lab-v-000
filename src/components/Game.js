@@ -14,14 +14,17 @@ class Game extends React.Component {
       burnt: 0,
       raw: 0
     };
+
   }
 
-  // TODO: create a componentWillMount() which will set the current time
+  componentWillMount() {
+    this.setCurrentTime
+  }
 
   setCurrentTime = () => {
     this.setState({ time: new Date(Date.now())});
   }
-
+  
   addPancake = () => {
     this.setState({
       pancakes: this.state.pancakes.concat(Date.now())
