@@ -28,6 +28,10 @@ class Game extends React.Component {
     });
   }
 
+  componentWillMount() {
+    this.setCurrentTime()
+  }
+
   takeItOff = (id, status) => {
     const { pancakes, cooked, burnt, raw } = this.state;
 
