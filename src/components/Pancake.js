@@ -1,5 +1,7 @@
 import React from 'react';
 
+// 
+
 class Pancake extends React.Component {
 
   constructor(props) {
@@ -21,13 +23,22 @@ class Pancake extends React.Component {
     })
   }
 
-  startInterval = () => {
+  componentDidMount = () => {
     this.interval = setInterval(this.updateCounter, 1000);
   }
 
-  cleanUpInterval = () => {
-    clearInterval(this.interval);
+
+  // startInterval = () => {
+  //   this.interval = setInterval(this.updateCounter, 1000);
+  // }
+
+  componentWillUnmount = () => {
+    clearInterval(this.interval)
   }
+
+  // cleanUpInterval = () => {
+  //   clearInterval(this.interval);
+  // }
 
   flip = () => {
     this.setState({
