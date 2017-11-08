@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Pancake from './Pancake';
 
-export default class Game extends React.Component {
+export default class Game extends Component {
 
   componentWillMount() {
     this.setCurrentTime();
