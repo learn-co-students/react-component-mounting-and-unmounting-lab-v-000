@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-export default class Pancake extends React.Component {
+export default class Pancake extends Component {
   componentDidMount() {
     this.startInterval();
   }
