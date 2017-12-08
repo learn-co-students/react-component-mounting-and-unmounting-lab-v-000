@@ -16,7 +16,7 @@ class Pancake extends React.Component {
   }
 
   componentWillUnmount() {
-    this.cleanUpInterval()
+    this.cleanUpInterval();
   }
 
   updateCounter = () => {
