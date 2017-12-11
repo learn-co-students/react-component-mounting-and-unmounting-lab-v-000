@@ -17,7 +17,10 @@ class Game extends React.Component {
   }
 
   // TODO: create a componentWillMount() which will set the current time
-
+  componentWillMount = () => {
+    this.setCurrentTime()
+  }
+  
   setCurrentTime = () => {
     this.setState({ time: new Date(Date.now())});
   }
@@ -42,7 +45,7 @@ class Game extends React.Component {
   render() {
     const { pancakes, burnt, cooked, raw, time } = this.state;
     const pans = pancakes.map((pancake, index) => <Pancake key={index} id={pancake} takeItOff={this.takeItOff} />);
-
+    
     return (
       <div className="Game">
         <span>Pancake shop opened at: {time ? time.toString() : ''}</span>
