@@ -3,7 +3,6 @@ import React from 'react';
 import Pancake from './Pancake';
 
 class Game extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -16,17 +15,19 @@ class Game extends React.Component {
     };
   }
 
-  // TODO: create a componentWillMount() which will set the current time
+  componentDidMount() {
+    this.setCurrentTime();
+  }
 
   setCurrentTime = () => {
-    this.setState({ time: new Date(Date.now())});
-  }
+    this.setState({ time: new Date(Date.now()) });
+  };
 
   addPancake = () => {
     this.setState({
       pancakes: this.state.pancakes.concat(Date.now())
     });
-  }
+  };
 
   takeItOff = (id, status) => {
     const { pancakes, cooked, burnt, raw } = this.state;
@@ -37,11 +38,13 @@ class Game extends React.Component {
       burnt: status === 'burnt' ? burnt + 1 : burnt,
       raw: status === 'raw' ? raw + 1 : raw
     });
-  }
+  };
 
   render() {
     const { pancakes, burnt, cooked, raw, time } = this.state;
-    const pans = pancakes.map((pancake, index) => <Pancake key={index} id={pancake} takeItOff={this.takeItOff} />);
+    const pans = pancakes.map((pancake, index) => (
+      <Pancake key={index} id={pancake} takeItOff={this.takeItOff} />
+    ));
 
     return (
       <div className="Game">
@@ -51,15 +54,12 @@ class Game extends React.Component {
           <div className="Game__score --burnt">Burnt: {burnt}</div>
           <div className="Game__score --raw">Raw: {raw}</div>
         </div>
-        <button
-          onClick={this.addPancake}
-          className="Game__button"
-        >
+        <button onClick={this.addPancake} className="Game__button">
           New pancake!
         </button>
         <div className="Game__pancakes">{pans}</div>
       </div>
-    )
+    );
   }
 }
 
