@@ -21,7 +21,7 @@ class Game extends React.Component {
   setCurrentTime = () => {
     this.setState({ time: new Date(Date.now())});
   }
-
+  
   addPancake = () => {
     this.setState({
       pancakes: this.state.pancakes.concat(Date.now())
@@ -37,6 +37,9 @@ class Game extends React.Component {
       burnt: status === 'burnt' ? burnt + 1 : burnt,
       raw: status === 'raw' ? raw + 1 : raw
     });
+  }
+  componentWillMount = () => {
+    this.setCurrentTime()
   }
 
   render() {
