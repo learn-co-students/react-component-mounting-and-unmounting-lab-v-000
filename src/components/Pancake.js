@@ -71,7 +71,7 @@ class Pancake extends React.Component {
             Time cooked on {`${firstSide ? 'first' : 'second'}`} side: {`${firstSide ? timeCooked : timeCooked - flippedAt}`}
           </p>
           <div>
-            { firstSide ?
+            {firstSide ?
               <button onClick={this.flip}>Flip me!</button>
               :
               <button onClick={this.takeItOff}>Take me off!</button>
@@ -80,6 +80,10 @@ class Pancake extends React.Component {
         </div>
       </div>
     )
+  }
+
+  componentDidMount() {
+    this.startInterval();
   }
 }
 
