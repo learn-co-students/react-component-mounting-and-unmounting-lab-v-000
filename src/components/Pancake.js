@@ -34,6 +34,14 @@ class Pancake extends React.Component {
     });
   };
 
+  componentDidMount() {
+    this.startInterval();
+  }
+
+  componentWillUnmount() {
+    this.cleanUpInterval();
+  }
+
   getPancakeStatus = () => {
     const { timeCooked, flippedAt } = this.state;
 
