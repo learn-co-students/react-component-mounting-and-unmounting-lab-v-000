@@ -20,11 +20,11 @@ class Pancake extends React.Component {
     });
   };
 
-  startInterval = () => {
+componentDidMount() {
     this.interval = setInterval(this.updateCounter, 1000);
   };
 
-  cleanUpInterval = () => {
+componentWillUnmount() {
     clearInterval(this.interval);
   };
 
