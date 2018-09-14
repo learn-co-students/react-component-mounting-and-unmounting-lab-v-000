@@ -35,8 +35,11 @@ describe('Pancake', () => {
   });
 
   it('calls componentWillUnmount', () => {
+
+    let spy = sinon.spy(Pancake.prototype, "componentWillUnmount")
+
     const pWrapper = mount(<Pancake />);
     pWrapper.unmount()
-    expect(pWrapper.type()).to.equal(null);
+    expect(Pancake.prototype.componentWillUnmount.calledOnce, "handleClick was not called").to.equal(true)
   });
 });
