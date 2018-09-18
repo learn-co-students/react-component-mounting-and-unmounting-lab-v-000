@@ -16,6 +16,10 @@ class Game extends React.Component {
     };
   }
 
+
+  componentDidMount () {
+      this.setCurrentTime();
+    }
   // TODO: create a componentDidMount() which will set the current time
   
   setCurrentTime = () => {
@@ -38,6 +42,8 @@ class Game extends React.Component {
       raw: status === 'raw' ? raw + 1 : raw
     });
   }
+
+
 
   render() {
     const { pancakes, burnt, cooked, raw, time } = this.state;
