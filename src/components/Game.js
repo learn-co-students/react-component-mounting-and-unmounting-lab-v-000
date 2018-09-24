@@ -16,8 +16,11 @@ class Game extends React.Component {
     };
   }
 
-  // TODO: create a componentDidMount() which will set the current time
-  
+  // sets up the interval updating the cooking time every second:
+  componentDidMount(){
+    this.setCurrentTime();
+  }
+
   setCurrentTime = () => {
     this.setState({ time: new Date(Date.now())});
   }
