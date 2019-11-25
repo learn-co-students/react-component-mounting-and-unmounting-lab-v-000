@@ -10,6 +10,13 @@ class Pancake extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.startInterval();
+  }
+
+  componentWillUnmount() {
+    this.cleanUpInterval();
+  }
   // TODO: create a componentDidMount() which will start the interval to count how long the pancake has been cooking
 
   // TODO: create a componentWillUnmount() which will clear the interval
@@ -73,8 +80,8 @@ class Pancake extends React.Component {
             {firstSide ? (
               <button onClick={this.flip}>Flip me!</button>
             ) : (
-              <button onClick={this.takeItOff}>Take me off!</button>
-            )}
+                <button onClick={this.takeItOff}>Take me off!</button>
+              )}
           </div>
         </div>
       </div>
