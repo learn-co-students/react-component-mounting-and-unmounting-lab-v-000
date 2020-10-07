@@ -14,10 +14,10 @@
     "enzyme-wait": "^1.0.9",
     "jsdom": "^9.9.1",
     "mocha": "^5.2.0",
-    "react-scripts": "^1.0.7",
-    "react-test-renderer": "^16.0.0",
+    "react-scripts": "^3.4.3",
+    "react-test-renderer": "^16.13.1",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "babel-core": "^6.22.1",
@@ -27,10 +27,10 @@
     "babel-preset-stage-1": "^6.24.1",
     "chai": "^4.1.2",
     "enzyme": "^3.1.0",
-    "enzyme-adapter-react-16": "^1.0.1",
+    "enzyme-adapter-react-16": "^1.15.5",
     "mocha-multi": "^1.0.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.4.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sinon": "^1.17.7"
   },
   "scripts": {
